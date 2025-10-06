@@ -1,20 +1,17 @@
 <?php
-
 require_once 'model/Product.php';
 
 class ProductController {
-    // Un seul produit
-    public function show() {
-        $product = new Product("Chaise de bureau", 129.99);
+    public function showProduct() {
+        $product = new Product("Téléphone", 899);
         require 'view/productView.php';
     }
 
-    // Liste de plusieurs produits
-    public function list() {
+    public function showProducts() {
         $products = [
-            new Product("Chaise de bureau", 129.99),
-            new Product("Table de salon", 199.50),
-            new Product("Lampe design", 49.99)
+            new Product("Ordinateur", 1200),
+            new Product("Clavier", 59),
+            new Product("Écran", 220)
         ];
         require 'view/productListView.php';
     }
