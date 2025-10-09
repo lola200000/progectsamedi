@@ -1,15 +1,1 @@
 
-<?php require DIR . '/../header.php'; ?>
-
-<?php foreach ($users as $user): ?>
-  <div class="user">
-      <h3>Utilisateur : <?= htmlspecialchars($user['nom']) ?></h3>
-      <p>age : <?= htmlspecialchars($user['age']) ?></p>
-      <a href="?page=user&id=<?= $user['id'] ?>">accéder à la biographie</a>
-  </div>
-  <br>
-<?php endforeach; ?>
-
-<a href="?page=produits">page liste produit</a>
-
-<?php require DIR . '/../footer.php'; ?>
