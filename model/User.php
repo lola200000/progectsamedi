@@ -1,16 +1,14 @@
 <?php
-require_once __DIR__ . '/bd.php';
-$pdo = DataBase::getConnection();
 
-function getAllPeople() {
-    global $pdo;
-    $stmt = $pdo->query("SELECT * FROM people");
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
+class User {
+    
+    public int $id;
+    public string $name;
+    public int $age;
 
-function getPersonById($id) {
-    global $pdo;
-    $stmt = $pdo->prepare("SELECT * FROM people WHERE id = ?");
-    $stmt->execute([$id]);
-    return $stmt->fetch(PDO::FETCH_ASSOC);
-}
+    public function __construct($id, $name, $age) {
+        $this->id = $id;
+        $this->name = $name;
+        $this->age = $age;
+    }
+}  
